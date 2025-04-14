@@ -1,0 +1,32 @@
+class_name Bar
+extends AnimatableBody2D
+
+const BASE_VELOCITY = 1
+const BASE_MOVE_VELOCTY = 300
+const PUSH_FORCE = 30
+
+var rotate_velocity: int = 0
+var move_velocity: int = 0
+
+func _physics_process(delta: float) -> void:
+	var left_axis: float = Input.get_axis("left_down", "left_up")
+	var right_axis: float = Input.get_axis("right_down", "right_up")
+	if is_zero_approx(right_axis) && is_zero_approx(left_axis):
+		move_velocity = 0
+		rotate_velocity = 0
+	elif is_zero_approx(right_axis):
+		rotate_velocity = left_axis * BASE_VELOCITY
+		move_velocity = left_axis * -BASE_MOVE_VELOCTY
+	elif is_zero_approx(left_axis):
+		rotate_velocity = right_axis * -BASE_VELOCITY
+		move_velocity = right_axis * -BASE_MOVE_VELOCTY
+	elif is_equal_approx(right_axis, left_axis):
+		move_velocity = right_axis * -BASE_MOVE_VELOCTY
+		rotate_velocity = 0
+		
+	rotation += delta * rotate_velocity
+	var collision_data := move_and_collide(Vector2(0, delta * move_velocity))
+	if collision_data:
+		if collision_data.get_collider() is RigidBody2D:
+			var rigid := collision_data.get_collider() as RigidBody2D
+			rigid.apply_central_impulse(-collision_data.get_normal() * PUSH_FORCE)
