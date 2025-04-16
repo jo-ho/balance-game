@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnwykvr2fxfer"]
+
+[ext_resource type="Script" uid="uid://dqncf1ikqsq62" path="res://pickup/pickup_2d.gd" id="1_yhgfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eibo3"]
+size = Vector2(64, 64)
+
+[node name="Pickup2D" type="Node2D"]
+script = ExtResource("1_yhgfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_eibo3")
+
+[node name="Despawn" type="Timer" parent="."]
+
+[node name="EffectTimer" type="Timer" parent="."]

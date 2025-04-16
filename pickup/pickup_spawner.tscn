@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj14eoj7ewav7"]
+
+[ext_resource type="Script" uid="uid://bsjg1nxqiowff" path="res://pickup/pickup_spawner.gd" id="1_v8vbo"]
+
+[node name="PickupSpawner" type="Node"]
+script = ExtResource("1_v8vbo")
+
+[node name="Timer" type="Timer" parent="."]
