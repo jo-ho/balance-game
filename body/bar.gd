@@ -3,7 +3,7 @@ extends AnimatableBody2D
 
 const BASE_VELOCITY = 1
 const BASE_MOVE_VELOCTY = 300
-const PUSH_FORCE = 30
+const PUSH_FORCE = 25
 const ROTATION_LIMIT = PI / 9
 
 var rotate_velocity: int = 0

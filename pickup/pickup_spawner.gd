@@ -5,9 +5,9 @@ extends Node
 
 @export var spawn_delay_secs: float = 1
 
-signal pickup_spawned(pickup: Pickup)
+signal pickup_spawned(pickup: PickupData)
 
-var pool: Array[Pickup] = [
+var pool: Array[PickupData] = [
 	
 ]
 
@@ -16,7 +16,7 @@ func _ready() -> void:
 	timer.wait_time = spawn_delay_secs
 
 func _on_timer_timeout() -> void:
-	var pickup: Pickup = pool.pick_random().instantiate()
+	var pickup: PickupData = pool.pick_random()
 	pickup_spawned.emit(pickup)
 	
 func start() -> void:

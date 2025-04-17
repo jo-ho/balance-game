@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=4 format=3 uid="uid://b8ycgi65sqfoi"]
+
+[ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="1_fgvba"]
+[ext_resource type="Script" uid="uid://bp7csbqvuqrg3" path="res://pickup/pickup_data.gd" id="1_xvkd8"]
+[ext_resource type="Texture2D" uid="uid://8ktp5nqs0oq4" path="res://pickup/assets/snowflake-1.png" id="3_tu8cs"]
+
+[resource]
+script = ExtResource("1_xvkd8")
+sprite = ExtResource("3_tu8cs")
+effect_type = 0
+duration_secs = 3
+scene = ExtResource("1_fgvba")
+metadata/_custom_type_script = "uid://bp7csbqvuqrg3"

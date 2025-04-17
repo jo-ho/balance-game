@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1gg3w3ryabb2"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_pgwv1"]
+[ext_resource type="Script" uid="uid://b6c1wyhnpor6c" path="res://effect/freeze.gd" id="2_3wtn4"]
+
+[node name="Effect" instance=ExtResource("1_pgwv1")]
+script = ExtResource("2_3wtn4")

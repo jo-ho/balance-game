@@ -16,5 +16,3 @@ script = ExtResource("1_yhgfi")
 shape = SubResource("RectangleShape2D_eibo3")
 
 [node name="Despawn" type="Timer" parent="."]
-
-[node name="EffectTimer" type="Timer" parent="."]
