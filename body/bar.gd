@@ -3,7 +3,6 @@ extends AnimatableBody2D
 
 const BASE_VELOCITY = 1
 const BASE_MOVE_VELOCTY = 300
-const PUSH_FORCE = 25
 const ROTATION_LIMIT = PI / 9
 
 var rotate_velocity: int = 0
@@ -26,8 +25,4 @@ func _physics_process(delta: float) -> void:
 		rotate_velocity = 0
 		
 	rotation = clamp(rotation + delta * rotate_velocity, -ROTATION_LIMIT, ROTATION_LIMIT) 
-	var collision_data := move_and_collide(Vector2(0, delta * move_velocity))
-	if collision_data:
-		if collision_data.get_collider() is RigidBody2D:
-			var rigid := collision_data.get_collider() as RigidBody2D
-			rigid.apply_central_impulse(-collision_data.get_normal() * PUSH_FORCE)
+	move_and_collide(Vector2(0, delta * move_velocity))
