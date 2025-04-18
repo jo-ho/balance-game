@@ -11,7 +11,7 @@ script = ExtResource("1_80nbo")
 [node name="EffectManager" parent="." instance=ExtResource("2_fc0e3")]
 
 [node name="Ball" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(535, 190)
+position = Vector2(508, 500)
 
 [node name="Bar" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(506, 557)

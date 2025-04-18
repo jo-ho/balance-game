@@ -12,6 +12,4 @@ script = ExtResource("1_n16na")
 texture = ExtResource("1_0upmb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.18, 3.18)
 shape = SubResource("CircleShape2D_o63hh")
-one_way_collision_margin = 0.0

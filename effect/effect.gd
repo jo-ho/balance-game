@@ -8,7 +8,7 @@ var data: EffectData
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 
-func on_apply(duration_secs: float) -> void:
+func on_apply(_duration_secs: float) -> void:
 	pass
 	
 func on_expire() -> void:

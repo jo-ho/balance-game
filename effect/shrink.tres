@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://bq17aj66dd71c"]
+
+[ext_resource type="Script" uid="uid://bhxbpwqpk62e1" path="res://effect/effect_data.gd" id="1_gb3l4"]
+[ext_resource type="PackedScene" uid="uid://dxnjsja8v1iua" path="res://effect/shrink.tscn" id="1_vxmsc"]
+
+[resource]
+script = ExtResource("1_gb3l4")
+type = 2
+name = "Shrink"
+scene = ExtResource("1_vxmsc")
+metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

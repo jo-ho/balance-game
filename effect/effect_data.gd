@@ -2,7 +2,9 @@ class_name EffectData
 extends Resource
 
 enum Type {
-	FREEZE
+	FREEZE,
+	ENLARGE,
+	SHRINK,
 }
 
 @export var type: Type

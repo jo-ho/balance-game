@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://bcot5knicmko"]
+
+[ext_resource type="Script" uid="uid://bhxbpwqpk62e1" path="res://effect/effect_data.gd" id="1_m7qei"]
+[ext_resource type="PackedScene" uid="uid://bgjyget7rkwbl" path="res://effect/enlarge.tscn" id="1_uww5e"]
+
+[resource]
+script = ExtResource("1_m7qei")
+type = 1
+name = "Enlarge"
+scene = ExtResource("1_uww5e")
+metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

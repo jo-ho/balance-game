@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgjyget7rkwbl"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_wjy2p"]
+[ext_resource type="Script" uid="uid://tu85vfeu1hrv" path="res://effect/enlarge.gd" id="2_a7ieh"]
+
+[node name="Enlarge" instance=ExtResource("1_wjy2p")]
+script = ExtResource("2_a7ieh")
