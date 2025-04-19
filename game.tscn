@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=8 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dlgf2llvx3moj" path="res://body/ball.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cm8gpjqpgogui" path="res://effect/effect_manager.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://6mll275lpau5" path="res://body/bar.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://d34ruqjmt7ppk" path="res://body/scripts/camera_2d.gd" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dlxvgg7pwsmgs" path="res://body/scripts/killzone.gd" id="5_ryrav"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eow3j"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
@@ -11,7 +15,30 @@ script = ExtResource("1_80nbo")
 [node name="EffectManager" parent="." instance=ExtResource("2_fc0e3")]
 
 [node name="Ball" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(508, 500)
+position = Vector2(590, 492)
+collision_layer = 7
 
-[node name="Bar" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(506, 557)
+[node name="Bar" type="Node" parent="."]
+
+[node name="Bar" parent="Bar" instance=ExtResource("3_feb5d")]
+position = Vector2(592, 555)
+
+[node name="Killzone" type="Area2D" parent="Bar/Bar"]
+position = Vector2(-592, -554)
+collision_layer = 2
+script = ExtResource("5_ryrav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Bar/Killzone"]
+position = Vector2(593, 742)
+shape = SubResource("WorldBoundaryShape2D_eow3j")
+
+[node name="Timer" type="Timer" parent="Bar/Bar/Killzone"]
+wait_time = 0.6
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 323)
+script = ExtResource("5_7jktm")
+
+[connection signal="body_entered" from="Bar/Bar/Killzone" to="Bar/Bar/Killzone" method="_on_body_entered"]
+[connection signal="timeout" from="Bar/Bar/Killzone/Timer" to="Bar/Bar/Killzone" method="_on_timer_timeout"]
