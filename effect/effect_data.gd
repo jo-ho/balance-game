@@ -5,6 +5,7 @@ enum Type {
 	FREEZE,
 	ENLARGE,
 	SHRINK,
+	TO_SQUARE,
 }
 
 @export var type: Type

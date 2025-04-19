@@ -5,6 +5,7 @@ var effects: Dictionary[EffectData.Type, EffectData] = {
 	EffectData.Type.FREEZE: preload("res://effect/freeze.tres"),
 	EffectData.Type.ENLARGE: preload("res://effect/enlarge.tres"),
 	EffectData.Type.SHRINK: preload("res://effect/shrink.tres"),
+	EffectData.Type.TO_SQUARE: preload("res://effect/to_square.tres"),
 }
 
 func add_effect(type: EffectData.Type, duration_secs: float) -> void:

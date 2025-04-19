@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=3 format=3 uid="uid://db4h5h25qv236"]
+
+[ext_resource type="Script" uid="uid://bp7csbqvuqrg3" path="res://pickup/pickup_data.gd" id="1_jixx6"]
+[ext_resource type="Texture2D" uid="uid://bmibtrfxxmikd" path="res://pickup/assets/transform.png" id="2_ic566"]
+
+[resource]
+script = ExtResource("1_jixx6")
+sprite = ExtResource("2_ic566")
+effect_type = 3
+duration_secs = 3
+metadata/_custom_type_script = "uid://bp7csbqvuqrg3"

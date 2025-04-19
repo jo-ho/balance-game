@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cnkhk1nuklk6y" path="res://body/assets/circle.png" id="1_0upmb"]
 [ext_resource type="Script" uid="uid://cbkhc4qpo413a" path="res://body/ball.gd" id="1_n16na"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o63hh"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_n16na"]
 
 [node name="Ball" type="RigidBody2D"]
 script = ExtResource("1_n16na")
@@ -12,4 +12,4 @@ script = ExtResource("1_n16na")
 texture = ExtResource("1_0upmb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_o63hh")
+shape = SubResource("CircleShape2D_n16na")

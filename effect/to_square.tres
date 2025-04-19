@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://dgw8vinhs7bsj"]
+
+[ext_resource type="PackedScene" uid="uid://ddoircq1jmure" path="res://effect/to_square.tscn" id="1_75eh8"]
+[ext_resource type="Script" uid="uid://bhxbpwqpk62e1" path="res://effect/effect_data.gd" id="1_i0l2v"]
+
+[resource]
+script = ExtResource("1_i0l2v")
+type = 3
+name = "To Square"
+scene = ExtResource("1_75eh8")
+metadata/_custom_type_script = "uid://bhxbpwqpk62e1"
