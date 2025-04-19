@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://clq805brok6c8"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_4nwyc"]
+[ext_resource type="Script" uid="uid://b3lgmrx4pm70c" path="res://effect/sticky.gd" id="2_l7jgc"]
+
+[node name="Sticky" instance=ExtResource("1_4nwyc")]
+script = ExtResource("2_l7jgc")

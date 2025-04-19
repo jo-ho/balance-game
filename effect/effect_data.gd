@@ -6,6 +6,7 @@ enum Type {
 	ENLARGE,
 	SHRINK,
 	TO_SQUARE,
+	STICKY,
 }
 
 @export var type: Type

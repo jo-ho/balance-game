@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=7 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dlgf2llvx3moj" path="res://body/ball.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cm8gpjqpgogui" path="res://effect/effect_manager.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://6mll275lpau5" path="res://body/bar.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="5_ryrav"]
+[ext_resource type="Resource" uid="uid://dpwu2nuvljviu" path="res://pickup/sticky_pickup.tres" id="6_eow3j"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
@@ -15,3 +17,7 @@ position = Vector2(508, 500)
 
 [node name="Bar" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(506, 557)
+
+[node name="Pickup2D" parent="." instance=ExtResource("5_ryrav")]
+position = Vector2(516, 279)
+data = ExtResource("6_eow3j")
