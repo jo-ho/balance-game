@@ -2,7 +2,7 @@ class_name Bar
 extends AnimatableBody2D
 
 const BASE_VELOCITY = 1
-const BASE_MOVE_VELOCTY = 300
+const BASE_MOVE_VELOCITY = 300
 const ROTATION_LIMIT = PI / 9
 
 var rotate_velocity: int = 0
@@ -21,12 +21,12 @@ func _physics_process(delta: float) -> void:
 		rotate_velocity = 0
 	elif is_zero_approx(right_axis):
 		rotate_velocity = left_axis * BASE_VELOCITY
-		move_velocity = left_axis * -BASE_MOVE_VELOCTY
+		move_velocity = left_axis * -BASE_MOVE_VELOCITY
 	elif is_zero_approx(left_axis):
 		rotate_velocity = right_axis * -BASE_VELOCITY
-		move_velocity = right_axis * -BASE_MOVE_VELOCTY
+		move_velocity = right_axis * -BASE_MOVE_VELOCITY
 	elif is_equal_approx(right_axis, left_axis):
-		move_velocity = right_axis * -BASE_MOVE_VELOCTY
+		move_velocity = right_axis * -BASE_MOVE_VELOCITY
 		rotate_velocity = 0
 		
 	rotation = clamp(rotation + delta * rotate_velocity, -ROTATION_LIMIT, ROTATION_LIMIT) 

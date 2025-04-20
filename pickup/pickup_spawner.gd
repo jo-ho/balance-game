@@ -1,26 +1,24 @@
 class_name PickupSpawner
 extends Node
 
-@onready var timer: Timer = $Timer
-
-@export var spawn_delay_secs: float = 1
+@export var spawn_distance: int = 1000
 
 signal pickup_spawned(pickup: PickupData)
 
-var pool: Array[PickupData] = [
-	
-]
+@export var pool: Array[PickupData] = []
 
-func _ready() -> void:
-	timer.timeout.connect(_on_timer_timeout)
-	timer.wait_time = spawn_delay_secs
+var last_spawned_y: float = 0
+var stopped: bool = true
 
-func _on_timer_timeout() -> void:
-	var pickup: PickupData = pool.pick_random()
-	pickup_spawned.emit(pickup)
+func try_spawn(current_y: float) -> void:
+	if not stopped and int(current_y - last_spawned_y) <= -spawn_distance:
+		var pickup: PickupData = pool.pick_random()
+		pickup_spawned.emit(pickup)
+		last_spawned_y = current_y
 	
-func start() -> void:
-	timer.start()
+func start(current_y: float) -> void:
+	last_spawned_y = current_y
+	stopped = false
 
 func stop() -> void:
-	timer.stop()
+	stopped = true

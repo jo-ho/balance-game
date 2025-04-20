@@ -4,5 +4,3 @@
 
 [node name="PickupSpawner" type="Node"]
 script = ExtResource("1_v8vbo")
-
-[node name="Timer" type="Timer" parent="."]
