@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6k864sqdumsp"]
+
+[ext_resource type="Texture2D" uid="uid://rvxr8flaeoxu" path="res://pickup/assets/downgrade.png" id="1_ohnxo"]
+[ext_resource type="Script" uid="uid://vyqvdq27y7si" path="res://effect/effect_ui.gd" id="1_ovye4"]
+
+[node name="EffectUI" type="HBoxContainer"]
+offset_right = 72.0
+offset_bottom = 64.0
+script = ExtResource("1_ovye4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_ohnxo")
+stretch_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false

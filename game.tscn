@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=17 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
 [ext_resource type="PackedScene" uid="uid://dlgf2llvx3moj" path="res://body/ball.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cm8gpjqpgogui" path="res://effect/effect_manager.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b6k864sqdumsp" path="res://effect/effect_ui.tscn" id="3_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://dj14eoj7ewav7" path="res://pickup/pickup_spawner.tscn" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://6mll275lpau5" path="res://body/bar.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://bp7csbqvuqrg3" path="res://pickup/pickup_data.gd" id="4_lc2xo"]
@@ -12,7 +13,7 @@
 [ext_resource type="Script" uid="uid://dlxvgg7pwsmgs" path="res://body/scripts/killzone.gd" id="5_ryrav"]
 [ext_resource type="Resource" uid="uid://b8ycgi65sqfoi" path="res://pickup/freeze_pickup.tres" id="6_7sc4i"]
 [ext_resource type="Resource" uid="uid://bk3x8ir8s1lsy" path="res://pickup/shrink_pickup.tres" id="7_80cx4"]
-[ext_resource type="Resource" path="res://pickup/sticky_pickup.tres" id="8_e8heu"]
+[ext_resource type="Resource" uid="uid://dpwu2nuvljviu" path="res://pickup/sticky_pickup.tres" id="8_e8heu"]
 [ext_resource type="Resource" uid="uid://db4h5h25qv236" path="res://pickup/to_square_pickup.tres" id="9_rvswv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eow3j"]
@@ -20,6 +21,13 @@
 [node name="Game" type="Node"]
 script = ExtResource("1_80nbo")
 pickup_2d_scene = ExtResource("2_215e1")
+effect_ui_scene = ExtResource("3_7sc4i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Effects" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="EffectManager" parent="." instance=ExtResource("2_fc0e3")]
 

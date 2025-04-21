@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://bq17aj66dd71c"]
+[gd_resource type="Resource" script_class="EffectData" load_steps=4 format=3 uid="uid://bq17aj66dd71c"]
 
 [ext_resource type="Script" uid="uid://bhxbpwqpk62e1" path="res://effect/effect_data.gd" id="1_gb3l4"]
 [ext_resource type="PackedScene" uid="uid://dxnjsja8v1iua" path="res://effect/shrink.tscn" id="1_vxmsc"]
+[ext_resource type="Texture2D" uid="uid://rvxr8flaeoxu" path="res://pickup/assets/downgrade.png" id="3_x8wk8"]
 
 [resource]
 script = ExtResource("1_gb3l4")
 type = 2
 name = "Shrink"
 scene = ExtResource("1_vxmsc")
+sprite = ExtResource("3_x8wk8")
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

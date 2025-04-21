@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://b871nn1h1npyd"]
+[gd_resource type="Resource" script_class="EffectData" load_steps=4 format=3 uid="uid://b871nn1h1npyd"]
 
 [ext_resource type="PackedScene" uid="uid://c1gg3w3ryabb2" path="res://effect/freeze.tscn" id="1_h7ju0"]
 [ext_resource type="Script" uid="uid://bhxbpwqpk62e1" path="res://effect/effect_data.gd" id="1_xc1y3"]
+[ext_resource type="Texture2D" uid="uid://8ktp5nqs0oq4" path="res://pickup/assets/snowflake-1.png" id="3_ifrxa"]
 
 [resource]
 script = ExtResource("1_xc1y3")
 type = 0
 name = "Freeze"
 scene = ExtResource("1_h7ju0")
+sprite = ExtResource("3_ifrxa")
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

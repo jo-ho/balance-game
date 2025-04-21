@@ -9,6 +9,8 @@ var effects: Dictionary[EffectData.Type, EffectData] = {
 	EffectData.Type.STICKY: preload("res://effect/sticky.tres"),
 }
 
+signal new_effect_received(effect: Effect)
+
 func add_effect(type: EffectData.Type, duration_secs: float) -> void:
 	for effect: Effect in get_children():
 		if effect.data.type == type:
@@ -18,4 +20,5 @@ func add_effect(type: EffectData.Type, duration_secs: float) -> void:
 	var new_effect: Effect = effects[type].scene.instantiate()
 	new_effect.data = effects[type]
 	add_child(new_effect)
+	new_effect_received.emit(new_effect)
 	new_effect.on_apply(duration_secs)
