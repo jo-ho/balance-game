@@ -7,6 +7,7 @@ enum Type {
 	SHRINK,
 	TO_SQUARE,
 	STICKY,
+	FOG,	
 }
 
 @export var type: Type

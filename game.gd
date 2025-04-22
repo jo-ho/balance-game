@@ -9,12 +9,14 @@ extends Node
 @onready var pickups: Node = $Pickups
 @onready var bar: Bar = $Bar/Bar
 @onready var effects: Control = $CanvasLayer/Effects
+@onready var fog: Sprite2D = $WorldEffects/Fog
 
 var dist_traveled: float = 0
 
 func _ready() -> void:
 	randomize()
 	Events.pickup_collected.connect(_on_pickup_collected)
+	Events.fog_enabled.connect(_on_fog_enabled)
 	pickup_spawner.pickup_spawned.connect(_on_pickup_spawned)
 	pickup_spawner.start(bar.position.y)
 	effect_manager.new_effect_received.connect(_on_new_effect_received)
@@ -36,3 +38,6 @@ func _on_new_effect_received(effect: Effect) -> void:
 	var effect_ui: EffectUI = effect_ui_scene.instantiate()
 	effect_ui.effect = effect
 	effects.add_child(effect_ui)
+	
+func _on_fog_enabled(value: bool) -> void:
+	fog.visible = value

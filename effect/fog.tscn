@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpvquy3mt1cwq"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_im5aa"]
+[ext_resource type="Script" uid="uid://bqheanvjq0yei" path="res://effect/fog.gd" id="2_6lhmj"]
+
+[node name="Fog" instance=ExtResource("1_im5aa")]
+script = ExtResource("2_6lhmj")

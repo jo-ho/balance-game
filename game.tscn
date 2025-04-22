@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=18 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://bk3x8ir8s1lsy" path="res://pickup/shrink_pickup.tres" id="7_80cx4"]
 [ext_resource type="Resource" uid="uid://dpwu2nuvljviu" path="res://pickup/sticky_pickup.tres" id="8_e8heu"]
 [ext_resource type="Resource" uid="uid://db4h5h25qv236" path="res://pickup/to_square_pickup.tres" id="9_rvswv"]
+[ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eow3j"]
 
@@ -23,9 +24,19 @@ script = ExtResource("1_80nbo")
 pickup_2d_scene = ExtResource("2_215e1")
 effect_ui_scene = ExtResource("3_7sc4i")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="WorldEffects" type="CanvasLayer" parent="."]
 
-[node name="Effects" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Fog" type="Sprite2D" parent="WorldEffects"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 256)
+scale = Vector2(1.125, 1)
+texture = ExtResource("16_80cx4")
+flip_v = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Effects" type="VBoxContainer" parent="UI"]
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -37,13 +48,13 @@ pool = Array[ExtResource("4_lc2xo")]([ExtResource("5_215e1"), ExtResource("6_7sc
 [node name="Pickups" type="Node" parent="."]
 
 [node name="Ball" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(590, 492)
+position = Vector2(573, 492)
 collision_layer = 7
 
 [node name="Bar" type="Node" parent="."]
 
 [node name="Bar" parent="Bar" instance=ExtResource("3_feb5d")]
-position = Vector2(592, 555)
+position = Vector2(573, 555)
 
 [node name="Killzone" type="Area2D" parent="Bar/Bar"]
 position = Vector2(-592, -554)
