@@ -8,8 +8,10 @@ extends Node
 @onready var pickup_spawner: PickupSpawner = $PickupSpawner
 @onready var pickups: Node = $Pickups
 @onready var bar: Bar = $Bar/Bar
-@onready var effects: Control = $CanvasLayer/Effects
+@onready var effects: Control = $UI/Effects
 @onready var fog: Sprite2D = $WorldEffects/Fog
+@onready var killzone: Killzone = $Bar/Bar/Killzone
+@onready var ball: Ball = $Ball
 
 var dist_traveled: float = 0
 
@@ -17,9 +19,11 @@ func _ready() -> void:
 	randomize()
 	Events.pickup_collected.connect(_on_pickup_collected)
 	Events.fog_enabled.connect(_on_fog_enabled)
+	
 	pickup_spawner.pickup_spawned.connect(_on_pickup_spawned)
 	pickup_spawner.start(bar.position.y)
 	effect_manager.new_effect_received.connect(_on_new_effect_received)
+	killzone.ball_revived.connect(_on_ball_revived)
 	
 func _on_pickup_collected(effect_type: EffectData.Type, duration_secs: float) -> void:
 	effect_manager.add_effect(effect_type, duration_secs)
@@ -41,3 +45,10 @@ func _on_new_effect_received(effect: Effect) -> void:
 	
 func _on_fog_enabled(value: bool) -> void:
 	fog.visible = value
+	
+func _on_ball_revived() -> void:
+	PhysicsServer2D.body_set_state(
+		  ball.get_rid(),
+		  PhysicsServer2D.BodyState.BODY_STATE_TRANSFORM,
+		  Transform2D.IDENTITY.translated(bar.position - Vector2(0, 256))
+	)

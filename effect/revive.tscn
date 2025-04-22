@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2f0n8j7seegv"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_62utj"]
+[ext_resource type="Script" uid="uid://c0itxy3aoc5jc" path="res://effect/revive.gd" id="2_lb3br"]
+
+[node name="Revive" instance=ExtResource("1_62utj")]
+script = ExtResource("2_lb3br")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=3 format=3 uid="uid://lvp8r16colrt"]
+
+[ext_resource type="Script" uid="uid://bp7csbqvuqrg3" path="res://pickup/pickup_data.gd" id="1_h7wmi"]
+[ext_resource type="Texture2D" uid="uid://kc80wjywddcf" path="res://pickup/assets/winged-emblem.png" id="2_vd5y6"]
+
+[resource]
+script = ExtResource("1_h7wmi")
+sprite = ExtResource("2_vd5y6")
+effect_type = 6
+duration_secs = 5
+metadata/_custom_type_script = "uid://bp7csbqvuqrg3"

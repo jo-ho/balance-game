@@ -8,6 +8,7 @@ enum Type {
 	TO_SQUARE,
 	STICKY,
 	FOG,	
+	REVIVE,
 }
 
 @export var type: Type

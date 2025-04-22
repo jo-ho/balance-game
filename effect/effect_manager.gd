@@ -8,6 +8,7 @@ var effects: Dictionary[EffectData.Type, EffectData] = {
 	EffectData.Type.TO_SQUARE: preload("res://effect/to_square.tres"),
 	EffectData.Type.STICKY: preload("res://effect/sticky.tres"),
 	EffectData.Type.FOG: preload("res://effect/fog.tres"),
+	EffectData.Type.REVIVE: preload("res://effect/revive.tres"),
 }
 
 signal new_effect_received(effect: Effect)

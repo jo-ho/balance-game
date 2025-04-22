@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=20 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -15,7 +15,9 @@
 [ext_resource type="Resource" uid="uid://bk3x8ir8s1lsy" path="res://pickup/shrink_pickup.tres" id="7_80cx4"]
 [ext_resource type="Resource" uid="uid://dpwu2nuvljviu" path="res://pickup/sticky_pickup.tres" id="8_e8heu"]
 [ext_resource type="Resource" uid="uid://db4h5h25qv236" path="res://pickup/to_square_pickup.tres" id="9_rvswv"]
+[ext_resource type="Resource" uid="uid://caet3pyrwesb1" path="res://pickup/fog_pickup.tres" id="13_rvswv"]
 [ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
+[ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eow3j"]
 
@@ -43,7 +45,7 @@ offset_bottom = 40.0
 [node name="EffectManager" parent="." instance=ExtResource("2_fc0e3")]
 
 [node name="PickupSpawner" parent="." instance=ExtResource("3_eow3j")]
-pool = Array[ExtResource("4_lc2xo")]([ExtResource("5_215e1"), ExtResource("6_7sc4i"), ExtResource("7_80cx4"), ExtResource("8_e8heu"), ExtResource("9_rvswv")])
+pool = Array[ExtResource("4_lc2xo")]([ExtResource("5_215e1"), ExtResource("6_7sc4i"), ExtResource("7_80cx4"), ExtResource("8_e8heu"), ExtResource("9_rvswv"), ExtResource("13_rvswv"), ExtResource("17_e8heu")])
 
 [node name="Pickups" type="Node" parent="."]
 

@@ -1,9 +1,7 @@
 extends Effect
 
 func _on_apply(duration_secs: float) -> void:
-	timer.start(duration_secs)
 	Events.ball_shrank.emit(true)
 	
-func on_expire() -> void:
+func _on_expire() -> void:
 	Events.ball_shrank.emit(false)
-	queue_free()
