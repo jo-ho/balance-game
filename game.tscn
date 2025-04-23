@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://dpwu2nuvljviu" path="res://pickup/sticky_pickup.tres" id="8_e8heu"]
 [ext_resource type="Resource" uid="uid://db4h5h25qv236" path="res://pickup/to_square_pickup.tres" id="9_rvswv"]
 [ext_resource type="Resource" uid="uid://caet3pyrwesb1" path="res://pickup/fog_pickup.tres" id="13_rvswv"]
-[ext_resource type="PackedScene" uid="uid://c1sbm62cdrsif" path="res://obstacle/obstacle_spawner.tscn" id="15_boyg6"]
+[ext_resource type="PackedScene" uid="uid://ycuuh3f50omh" path="res://obstacle/obstacle_spawner.tscn" id="15_boyg6"]
 [ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
 [ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
 
