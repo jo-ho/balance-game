@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbxlvm6ykkori"]
+
+[ext_resource type="PackedScene" uid="uid://d0o00h73132yl" path="res://obstacle/obstacle_2d.tscn" id="1_bd266"]
+[ext_resource type="Texture2D" uid="uid://dvnd4hlpaj7mu" path="res://obstacle/assets/weight.png" id="2_qqs1v"]
+
+[node name="Weight" instance=ExtResource("1_bd266")]
+mass = 5.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qqs1v")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(10, 4)
+scale = Vector2(1.925, 2.55)
+polygon = PackedVector2Array(-19.7403, 9.41177, -9.87013, -12.549, -0.519481, -12.549, 9.35065, 9.41177, 2.79862, 9.41177)

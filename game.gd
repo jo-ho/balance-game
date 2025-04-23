@@ -4,6 +4,7 @@ extends Node
 @export var pickup_2d_scene: PackedScene
 @export var effect_ui_scene: PackedScene
 
+@onready var obstacle_spawner: ObstacleSpawner = $ObstacleSpawner
 @onready var effect_manager: EffectManager = $EffectManager
 @onready var pickup_spawner: PickupSpawner = $PickupSpawner
 @onready var pickups: Node = $Pickups
@@ -12,6 +13,7 @@ extends Node
 @onready var fog: Sprite2D = $WorldEffects/Fog
 @onready var killzone: Killzone = $Bar/Bar/Killzone
 @onready var ball: Ball = $Ball
+@onready var obstacles: Node = $Obstacles
 
 var dist_traveled: float = 0
 
@@ -22,6 +24,10 @@ func _ready() -> void:
 	
 	pickup_spawner.pickup_spawned.connect(_on_pickup_spawned)
 	pickup_spawner.start(bar.position.y)
+	
+	obstacle_spawner.obstacle_spawned.connect(_on_obstacle_spawned)
+	obstacle_spawner.start()
+	
 	effect_manager.new_effect_received.connect(_on_new_effect_received)
 	killzone.ball_revived.connect(_on_ball_revived)
 	
@@ -33,6 +39,11 @@ func _on_pickup_spawned(data: PickupData) -> void:
 	pickup_2d.data = data
 	pickups.add_child(pickup_2d)
 	pickup_2d.position = Vector2(
+		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
+		
+func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
+	obstacles.add_child(obstacle)
+	obstacle.position = Vector2(
 		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
 
 func _process(_delta: float) -> void:

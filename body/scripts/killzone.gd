@@ -6,6 +6,8 @@ extends Area2D
 signal ball_revived
 
 func _on_body_entered(body: Node2D) -> void:
+	if body is not Ball:
+		return
 	print("You Died")
 	if not Globals.revive_active:
 		timer.start()

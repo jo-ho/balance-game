@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0o00h73132yl"]
+
+[ext_resource type="Script" uid="uid://dpg2p3s0t08cn" path="res://obstacle/obstacle_2d.gd" id="1_r2i8r"]
+
+[node name="Obstacle2D" type="RigidBody2D"]
+script = ExtResource("1_r2i8r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Despawn" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
