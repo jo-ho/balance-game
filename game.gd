@@ -14,8 +14,9 @@ extends Node
 @onready var killzone: Killzone = $Bar/Bar/Killzone
 @onready var ball: Ball = $Ball
 @onready var obstacles: Node = $Obstacles
+@onready var distance: Label = $UI/Distance
 
-var dist_traveled: float = 0
+var starting_dist: float = 0
 
 func _ready() -> void:
 	randomize()
@@ -30,6 +31,8 @@ func _ready() -> void:
 	
 	effect_manager.new_effect_received.connect(_on_new_effect_received)
 	killzone.ball_revived.connect(_on_ball_revived)
+	
+	starting_dist = bar.position.y
 	
 func _on_pickup_collected(effect_type: EffectData.Type, duration_secs: float) -> void:
 	effect_manager.add_effect(effect_type, duration_secs)
@@ -47,6 +50,7 @@ func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
 		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
 
 func _process(_delta: float) -> void:
+	distance.text = str(absi(bar.position.y - starting_dist))
 	pickup_spawner.try_spawn(bar.position.y)
 
 func _on_new_effect_received(effect: Effect) -> void:

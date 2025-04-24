@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=22 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://ycuuh3f50omh" path="res://obstacle/obstacle_spawner.tscn" id="15_boyg6"]
 [ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
 [ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_boyg6"]
+font_size = 48
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eow3j"]
 
@@ -42,6 +45,18 @@ flip_v = true
 [node name="Effects" type="VBoxContainer" parent="UI"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Distance" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "9999"
+label_settings = SubResource("LabelSettings_boyg6")
+horizontal_alignment = 1
 
 [node name="EffectManager" parent="." instance=ExtResource("2_fc0e3")]
 
