@@ -13,9 +13,9 @@ func _ready() -> void:
 func on_apply(duration_secs: float) -> void:
 	applied.emit(duration_secs)
 	timer.start(duration_secs)
-	_on_apply(duration_secs)
+	_on_apply()
 	
-func _on_apply(_duration_secs: float) -> void:
+func _on_apply() -> void:
 	pass
 	
 func _on_expire() -> void:

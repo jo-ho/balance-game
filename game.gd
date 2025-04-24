@@ -50,8 +50,12 @@ func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
 		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
 
 func _process(_delta: float) -> void:
-	distance.text = str(absi(bar.position.y - starting_dist))
+	var dist_traveled: int = absi(bar.position.y - starting_dist)
+	distance.text = str(dist_traveled)
 	pickup_spawner.try_spawn(bar.position.y)
+	
+	pickup_spawner.curr_dist = dist_traveled
+	obstacle_spawner.curr_dist = dist_traveled
 
 func _on_new_effect_received(effect: Effect) -> void:
 	var effect_ui: EffectUI = effect_ui_scene.instantiate()

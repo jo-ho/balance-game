@@ -1,6 +1,6 @@
 extends Effect
 
-func _on_apply(duration_secs: float) -> void:
+func _on_apply() -> void:
 	Events.bar_stuck.emit(true)
 	
 func _on_expire() -> void:
