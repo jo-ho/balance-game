@@ -48,6 +48,7 @@ func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
 	obstacles.add_child(obstacle)
 	obstacle.position = Vector2(
 		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
+	obstacle.rotation = randf_range(0, 2 * PI)
 
 func _process(_delta: float) -> void:
 	var dist_traveled: int = absi(bar.position.y - starting_dist)

@@ -222,7 +222,6 @@ animations = [{
 }]
 
 [node name="Obstacle2D" type="RigidBody2D"]
-freeze_mode = 1
 script = ExtResource("1_r2i8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

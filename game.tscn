@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=23 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ycuuh3f50omh" path="res://obstacle/obstacle_spawner.tscn" id="15_boyg6"]
 [ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
 [ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
+[ext_resource type="Texture2D" uid="uid://uacwmwdmrkla" path="res://environment/assets/bkgd_0.png" id="20_e36ub"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_boyg6"]
 font_size = 48
@@ -29,6 +30,18 @@ font_size = 48
 script = ExtResource("1_80nbo")
 pickup_2d_scene = ExtResource("2_215e1")
 effect_ui_scene = ExtResource("3_7sc4i")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+repeat_size = Vector2(0, 1152)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+modulate = Color(1, 1, 1, 0.878431)
+position = Vector2(-3, 0)
+scale = Vector2(0.576, 0.576)
+texture = ExtResource("20_e36ub")
+centered = false
 
 [node name="WorldEffects" type="CanvasLayer" parent="."]
 

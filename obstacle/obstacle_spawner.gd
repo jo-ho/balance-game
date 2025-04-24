@@ -28,7 +28,7 @@ func _on_timer_timeout() -> void:
 	obstacle_spawned.emit(obstacle)
 	timer.wait_time = spawn_delay_secs
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if curr_dist > 0 and curr_dist % change_every_dist == 0:
 		spawn_delay_secs -= decrement
 	
