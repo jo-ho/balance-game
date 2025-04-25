@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=24 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bq7ryvlqsxf6s" path="res://environment/assets/fog01.png" id="16_80cx4"]
 [ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
 [ext_resource type="Texture2D" uid="uid://uacwmwdmrkla" path="res://environment/assets/bkgd_0.png" id="20_e36ub"]
+[ext_resource type="AudioStream" uid="uid://dq0668i6212mf" path="res://environment/assets/sfx_sounds_negative1.wav" id="20_hb5m1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_boyg6"]
 font_size = 48
@@ -96,12 +97,16 @@ position = Vector2(-592, -554)
 collision_layer = 2
 script = ExtResource("5_ryrav")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bar/Bar/Killzone"]
+stream = ExtResource("20_hb5m1")
+volume_db = -10.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Bar/Killzone"]
 position = Vector2(593, 742)
 shape = SubResource("WorldBoundaryShape2D_eow3j")
 
 [node name="Timer" type="Timer" parent="Bar/Bar/Killzone"]
-wait_time = 0.6
+wait_time = 0.8
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
