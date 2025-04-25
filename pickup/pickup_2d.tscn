@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnwykvr2fxfer"]
+[gd_scene load_steps=4 format=3 uid="uid://cnwykvr2fxfer"]
 
 [ext_resource type="Script" uid="uid://dqncf1ikqsq62" path="res://pickup/pickup_2d.gd" id="1_yhgfi"]
+[ext_resource type="AudioStream" uid="uid://cvh4puon8hqlm" path="res://pickup/assets/sfx_coin_cluster1.wav" id="2_eibo3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eibo3"]
 size = Vector2(64, 64)
@@ -16,3 +17,7 @@ script = ExtResource("1_yhgfi")
 shape = SubResource("RectangleShape2D_eibo3")
 
 [node name="Despawn" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eibo3")
+volume_db = -10.0

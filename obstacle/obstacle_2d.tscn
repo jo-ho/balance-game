@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://d0o00h73132yl"]
+[gd_scene load_steps=35 format=3 uid="uid://d0o00h73132yl"]
 
 [ext_resource type="Script" uid="uid://dpg2p3s0t08cn" path="res://obstacle/obstacle_2d.gd" id="1_r2i8r"]
 [ext_resource type="Texture2D" uid="uid://b2hgt05fdtqmo" path="res://obstacle/assets/Poof.png" id="2_ntvbr"]
+[ext_resource type="AudioStream" uid="uid://bxncklubl4vms" path="res://obstacle/assets/sfx_sounds_impact1.wav" id="3_4nja7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4b18"]
 atlas = ExtResource("2_ntvbr")
@@ -222,6 +223,8 @@ animations = [{
 }]
 
 [node name="Obstacle2D" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_r2i8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -237,3 +240,10 @@ autostart = true
 visible = false
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_4nja7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4nja7")
+volume_db = -30.0
+
+[node name="SoundDelay" type="Timer" parent="."]
+one_shot = true
