@@ -10,4 +10,5 @@ type = 1
 name = "Enlarge"
 scene = ExtResource("1_uww5e")
 sprite = ExtResource("3_wsqmn")
+description = "Increased ball size."
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

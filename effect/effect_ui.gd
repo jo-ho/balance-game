@@ -2,7 +2,8 @@ class_name EffectUI
 extends HBoxContainer
 
 @onready var texture_rect: TextureRect = $TextureRect
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var progress_bar: ProgressBar = $VBoxContainer/ProgressBar
+@onready var label: Label = $VBoxContainer/Label
 
 var effect: Effect
 
@@ -11,6 +12,7 @@ func _ready() -> void:
 	effect.applied.connect(_on_effect_applied)
 	_on_effect_applied(effect.timer.wait_time)
 	texture_rect.texture = effect.data.sprite
+	label.text = effect.data.description
 	
 func _process(_delta: float) -> void:
 	progress_bar.value = effect.timer.time_left

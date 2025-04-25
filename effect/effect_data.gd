@@ -15,3 +15,4 @@ enum Type {
 @export var name: String
 @export var scene: PackedScene
 @export var sprite: Texture2D
+@export_multiline var description: String

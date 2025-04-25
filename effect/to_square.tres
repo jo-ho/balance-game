@@ -10,4 +10,5 @@ type = 3
 name = "To Square"
 scene = ExtResource("1_75eh8")
 sprite = ExtResource("3_ogibh")
+description = "Transform ball to square."
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

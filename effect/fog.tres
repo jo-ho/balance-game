@@ -10,4 +10,5 @@ type = 5
 name = "Fog"
 scene = ExtResource("1_1t8oa")
 sprite = ExtResource("3_q786k")
+description = "Obscures vision."
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

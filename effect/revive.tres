@@ -10,4 +10,5 @@ type = 6
 name = "Revive"
 scene = ExtResource("1_01h5m")
 sprite = ExtResource("3_s8unp")
+description = "Revive on falling."
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"

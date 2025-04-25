@@ -10,4 +10,5 @@ type = 4
 name = "Sticky"
 scene = ExtResource("1_gg1ns")
 sprite = ExtResource("3_sny3i")
+description = "Disable input on one side."
 metadata/_custom_type_script = "uid://bhxbpwqpk62e1"
