@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5dmc2cjpduu"]
+
+[ext_resource type="PackedScene" uid="uid://d0o00h73132yl" path="res://obstacle/obstacle_2d.tscn" id="1_xu6pm"]
+[ext_resource type="Texture2D" uid="uid://b1gemvc3qg16w" path="res://obstacle/assets/carrot.png" id="2_52s0j"]
+
+[node name="Carrot" instance=ExtResource("1_xu6pm")]
+mass = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_52s0j")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-4, -2)
+polygon = PackedVector2Array(3, -29, -23, -30, -27, -10, 36, 36)

@@ -99,7 +99,7 @@ script = ExtResource("5_ryrav")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bar/Bar/Killzone"]
 stream = ExtResource("20_hb5m1")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Bar/Killzone"]
 position = Vector2(593, 742)

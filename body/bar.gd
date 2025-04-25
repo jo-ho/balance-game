@@ -10,6 +10,8 @@ var move_velocity: int = 0
 
 var stuck_status: Array[float] = [1.0, 1.0]
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	Events.bar_stuck.connect(_on_bar_stuck)
 

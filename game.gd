@@ -42,12 +42,18 @@ func _on_pickup_spawned(data: PickupData) -> void:
 	pickup_2d.data = data
 	pickups.add_child(pickup_2d)
 	pickup_2d.position = Vector2(
-		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
+		randi_range(
+			get_viewport().size.x / 2.0 - bar.sprite_2d.get_rect().size.x / 2.0, 
+			get_viewport().size.x / 2.0 + bar.sprite_2d.get_rect().size.x / 2.0), 
+		bar.position.y - get_viewport().size.y)
 		
 func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
 	obstacles.add_child(obstacle)
 	obstacle.position = Vector2(
-		randi_range(0, get_viewport().size.x), bar.position.y - get_viewport().size.y)
+		randi_range(
+			get_viewport().size.x / 2.0 - bar.sprite_2d.get_rect().size.x / 2.0, 
+			get_viewport().size.x / 2.0 + bar.sprite_2d.get_rect().size.x / 2.0), 
+		bar.position.y - get_viewport().size.y)
 	obstacle.rotation = randf_range(0, 2 * PI)
 
 func _process(_delta: float) -> void:
