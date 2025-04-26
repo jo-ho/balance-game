@@ -2,9 +2,9 @@ class_name PickupSpawner
 extends Node
 
 @export var max_spawn_distance: int = 1000
-@export var min_spawn_distance: int = 500
+@export var min_spawn_distance: int = 250
 @export var decrement: int = 50
-@export var change_every_dist: int = 5000
+@export var change_every_dist: int = 2500
 
 var curr_dist: int = 0
 

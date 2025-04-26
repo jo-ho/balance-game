@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://mot2jnulhvfy"]
+[gd_scene load_steps=25 format=3 uid="uid://mot2jnulhvfy"]
 
 [ext_resource type="Script" uid="uid://deybraxkl66uj" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cnwykvr2fxfer" path="res://pickup/pickup_2d.tscn" id="2_215e1"]
@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://lvp8r16colrt" path="res://pickup/revive_pickup.tres" id="17_e8heu"]
 [ext_resource type="Texture2D" uid="uid://uacwmwdmrkla" path="res://environment/assets/bkgd_0.png" id="20_e36ub"]
 [ext_resource type="AudioStream" uid="uid://dq0668i6212mf" path="res://environment/assets/sfx_sounds_negative1.wav" id="20_hb5m1"]
+[ext_resource type="AudioStream" uid="uid://dqr3ww6wl1ttx" path="res://environment/assets/Space Heroes.ogg" id="22_x5p1p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_boyg6"]
 font_size = 48
@@ -112,6 +113,11 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 323)
 script = ExtResource("5_7jktm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_x5p1p")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="Bar/Bar/Killzone" to="Bar/Bar/Killzone" method="_on_body_entered"]
 [connection signal="timeout" from="Bar/Bar/Killzone/Timer" to="Bar/Bar/Killzone" method="_on_timer_timeout"]

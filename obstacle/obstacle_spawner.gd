@@ -4,7 +4,7 @@ extends Node
 @export var max_spawn_delay_secs: float = 1.5
 @export var min_spawn_delay_secs: float = 0.3
 @export var decrement: float = 0.1
-@export var change_every_dist: int = 5000
+@export var change_every_dist: int = 2500
 
 var curr_dist: int = 0
 var spawn_delay_secs: float = max_spawn_delay_secs:
