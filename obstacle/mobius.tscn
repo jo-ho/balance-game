@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjuel3bebvrk"]
+
+[ext_resource type="PackedScene" uid="uid://d0o00h73132yl" path="res://obstacle/obstacle_2d.tscn" id="1_i18uy"]
+[ext_resource type="Texture2D" uid="uid://daqya74tt1ucv" path="res://obstacle/assets/moebius-triangle.png" id="2_5oa77"]
+
+[node name="Mobius" instance=ExtResource("1_i18uy")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_5oa77")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-13, -37, -31, 33, 36, 15)

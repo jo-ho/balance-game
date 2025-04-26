@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://7uv2ytxshg30"]
+
+[ext_resource type="PackedScene" uid="uid://d0o00h73132yl" path="res://obstacle/obstacle_2d.tscn" id="1_43b4u"]
+[ext_resource type="Texture2D" uid="uid://os6vi4dbfryv" path="res://obstacle/assets/basketball-ball.png" id="2_gf4xf"]
+
+[node name="Basketball" instance=ExtResource("1_43b4u")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_gf4xf")
+
+[node name="CollisionShape2D" parent="." index="1"]
+polygon = PackedVector2Array(-13, -24, 0, -28, 14, -24, 24, -13, 27, 0, 25, 13, 19, 19, 12, 25, 0, 28, -12, 26, -19, 20, -26, 10, -27, 0, -26, -11, -20, -19)

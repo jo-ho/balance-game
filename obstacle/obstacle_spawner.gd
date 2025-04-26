@@ -2,7 +2,7 @@ class_name ObstacleSpawner
 extends Node
 
 @export var max_spawn_delay_secs: float = 1.5
-@export var min_spawn_delay_secs: float = 0.5
+@export var min_spawn_delay_secs: float = 0.3
 @export var decrement: float = 0.1
 @export var change_every_dist: int = 5000
 
@@ -18,6 +18,10 @@ signal obstacle_spawned(obstacle: RigidBody2D)
 var pool: Array[PackedScene] = [
 	preload("res://obstacle/weight.tscn"),
 	preload("res://obstacle/carrot.tscn"),
+	preload("res://obstacle/mobius.tscn"),
+	preload("res://obstacle/basketball.tscn"),
+	preload("res://obstacle/crate.tscn"),
+	preload("res://obstacle/shuriken.tscn"),
 ]
 
 func _ready() -> void:

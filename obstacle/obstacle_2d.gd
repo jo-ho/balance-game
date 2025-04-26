@@ -20,7 +20,7 @@ func _on_despawn() -> void:
 	poof.visible = true
 	poof.play("default")
 	
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	if sound_delay.is_stopped():
 		audio_stream_player.play()
 		sound_delay.start()
