@@ -9,6 +9,7 @@ enum Type {
 	STICKY,
 	FOG,	
 	REVIVE,
+	STAR,
 }
 
 @export var type: Type

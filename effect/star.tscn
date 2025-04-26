@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://se31t6kblij5"]
+
+[ext_resource type="PackedScene" uid="uid://o3hqnitgvtub" path="res://effect/effect.tscn" id="1_n1knx"]
+[ext_resource type="Script" uid="uid://0ut41xegk8ns" path="res://effect/star.gd" id="2_myrqx"]
+
+[node name="Star" instance=ExtResource("1_n1knx")]
+script = ExtResource("2_myrqx")
+score_value = 5000

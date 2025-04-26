@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PickupData" load_steps=3 format=3 uid="uid://bwqge8y5tkbpd"]
+
+[ext_resource type="Script" uid="uid://bp7csbqvuqrg3" path="res://pickup/pickup_data.gd" id="1_ex50u"]
+[ext_resource type="Texture2D" uid="uid://byfbk82qyc3bv" path="res://pickup/assets/round-star.png" id="2_yjf7r"]
+
+[resource]
+script = ExtResource("1_ex50u")
+sprite = ExtResource("2_yjf7r")
+effect_type = 7
+duration_secs = 0
+metadata/_custom_type_script = "uid://bp7csbqvuqrg3"

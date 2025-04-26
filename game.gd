@@ -20,6 +20,7 @@ var starting_dist: float = 0
 
 func _ready() -> void:
 	randomize()
+	Globals.reset()
 	Events.pickup_collected.connect(_on_pickup_collected)
 	Events.fog_enabled.connect(_on_fog_enabled)
 	
@@ -58,7 +59,7 @@ func _on_obstacle_spawned(obstacle: RigidBody2D) -> void:
 
 func _process(_delta: float) -> void:
 	var dist_traveled: int = absi(bar.position.y - starting_dist)
-	distance.text = str(dist_traveled)
+	distance.text = str(dist_traveled  + Globals.score)
 	pickup_spawner.try_spawn(bar.position.y)
 	
 	pickup_spawner.curr_dist = dist_traveled

@@ -9,6 +9,7 @@ var effects: Dictionary[EffectData.Type, EffectData] = {
 	EffectData.Type.STICKY: preload("res://effect/sticky.tres"),
 	EffectData.Type.FOG: preload("res://effect/fog.tres"),
 	EffectData.Type.REVIVE: preload("res://effect/revive.tres"),
+	EffectData.Type.STAR: preload("res://effect/star.tres"),
 }
 
 signal new_effect_received(effect: Effect)
@@ -22,5 +23,6 @@ func add_effect(type: EffectData.Type, duration_secs: float) -> void:
 	var new_effect: Effect = effects[type].scene.instantiate()
 	new_effect.data = effects[type]
 	add_child(new_effect)
-	new_effect_received.emit(new_effect)
+	if type != EffectData.Type.STAR:
+		new_effect_received.emit(new_effect)
 	new_effect.on_apply(duration_secs)
